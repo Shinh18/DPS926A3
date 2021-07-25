@@ -1,0 +1,7 @@
+{
+  "name": "asg3",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
