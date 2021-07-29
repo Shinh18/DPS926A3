@@ -16,8 +16,9 @@ export class ManagerPage implements OnInit {
   }
 
   newOrder(){
-    this.orderService.clearOrderList();
-    this.pizzaService.clearPizza();
+    this.orderService.clearCurrOrder();
+    //this.orderService.clearOrderList();
+   // this.pizzaService.clearPizza();
     this.router.navigate(['home']);
   }
 }

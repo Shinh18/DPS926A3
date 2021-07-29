@@ -125,15 +125,15 @@ export class HomePage implements OnInit{
       this.order = this.orderService.getOrder();
     //  console.log(this.order.pizzaList)
     
-      for(let pz of this.order.pizzaList){
-        // 
-        this.m_totalQty += pz.quantity;
-        this.m_totalPrice += pz.price;
-        console.log("total qty, price " + this.m_totalQty + " " + this.m_totalPrice);
-      }
-      console.log( this.m_totalPrice);
-      this.order.totalPrice = this.m_totalPrice;
-      this.order.totalQuantity = this.m_totalQty;
+      // for(let pz of this.order.pizzaList){
+      //   // 
+      //   this.m_totalQty += pz.quantity;
+      //   this.m_totalPrice += pz.price;
+      //   console.log("total qty, price " + this.m_totalQty + " " + this.m_totalPrice);
+      // }
+      // console.log( this.m_totalPrice);
+      // this.order.totalPrice = this.m_totalPrice;
+      // this.order.totalQuantity = this.m_totalQty;
       
       // this.m_totalPrice = 0;
       // this.m_totalQty = 0;
@@ -141,18 +141,28 @@ export class HomePage implements OnInit{
       // this.m_pizzaCount
     }
 
+    // const alert2 = await this.alertController.create({
+    //   header: 'Successful',
+    //   message: 'Your order has now ' + this.m_totalQty + ' pizzas , the total is ' + this.m_totalPrice + ' CND',
+    //   buttons: ['OK']
+    // });
+
     const alert2 = await this.alertController.create({
       header: 'Successful',
-      message: 'Your order has now ' + this.m_totalQty + ' pizzas , the total is ' + this.m_totalPrice + ' CND',
+      message: 'Your order has now ' + this.order.totalQuantity + ' pizzas, the total is ' + this.order.totalPrice + ' CND',
       buttons: ['OK']
     });
     await alert2.present()
 
-    this.pizzaService.clearPizza();
-    this.pizza.quantity = 0;
-    this.pizza.size ='';
-    this.pizza.topping ='';
-    this.pizza.price = 0;
+    this.m_qty = null;
+    this.m_size = "";
+    this.m_topping = "";
+    console.log(this.order);
+    //this.pizzaService.clearPizza();
+    // this.pizza.quantity = 0;
+    // this.pizza.size ='';
+    // this.pizza.topping ='';
+    // this.pizza.price = 0;
     //console.log("add clicked" + this.pizza.price);
     //console.log(this.pizza.size + " " + this.pizza.quantity + " " + this.pizza.topping + " " + this.pizza.price + " " + this.pizza.id);
     // this.pizza.size = this.m_size;
