@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Current Order</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3>{{ m_totalPrice }}</h3>
+  <h3>{{ m_totalQty }}</h3>
+  <ion-card>
+    <ion-card-content>
+   
+        <ion-list-header lines="inset">
+          <ion-grid *ngFor="let pizza of currOrder.pizzaList">
+            <ion-row>
+              <ion-col size="6">
+                <ion-label>Topping: {{pizza.topping}}</ion-label>
+              </ion-col>
+              <ion-col size="6">
+                <ion-label>Price: {{pizza.price}}</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6">
+                <ion-label>Size: {{pizza.size}}</ion-label>
+              </ion-col>
+              <ion-col size="6">
+                <ion-label>Qty: {{pizza.quantity}}</ion-label>
+              </ion-col>
+            </ion-row>
+          </ion-grid>       
+        </ion-list-header>
+       
+    </ion-card-content>
+
+  </ion-card>
+  <section>
+    <ion-button color="success">PLACE ORDER</ion-button>
+  </section>
+</ion-content>

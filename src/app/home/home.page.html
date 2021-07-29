@@ -1,20 +1,114 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
+  <ion-toolbar color="primary">
+    <ion-title align="center">
+      Pizza App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar color="primary">
+      <ion-title size="large" >Pizza App</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
+<!-- 
+  <ion-thumbnail slot="start">
+    <ion-img [src]="../assets/icon/favicon.png"></ion-img>
+  </ion-thumbnail> -->
+ 
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">      
+            <ion-img src="../../assets/logo.jpg">
+            </ion-img>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button (click)="manager()" color="tertiary">MANAGER</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-label>Quantity: </ion-label>
+        <ion-label *ngIf="m_qty>=0">{{m_qty}}</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="setQty(1)" color="secondary">1</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="setQty(2)" color="secondary">2</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="setQty(3)" color="secondary">3</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="setQty(4)" color="secondary">4</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="setQty(5)" color="secondary">5</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="setQty(6)" color="secondary">6</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="setQty(7)" color="secondary">7</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="setQty(8)" color="secondary">8</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="setQty(9)" color="secondary">9</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="reset()"color="danger">RESET</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="setQty(0)" color="secondary">0</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="addOrder()"color="success">ADD</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-list>
+            <ion-item>
+              <ion-label>Topping: </ion-label>
+              <ion-label *ngIf="m_topping">{{m_topping}}</ion-label>
+            </ion-item>
+            <ion-item button (click)="setTopping(topping.title)" *ngFor="let topping of toppings">
+              <ion-label color="danger">{{topping.title}}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col size="6">
+          <ion-list>
+            <ion-item >
+              <ion-label>Size: </ion-label>
+              <ion-label *ngIf="m_size">{{m_size}}</ion-label>
+            </ion-item>
+            <ion-item button (click)="setSize(size.title)" *ngFor="let size of sizes">
+              <ion-label color="danger">{{size.title}}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+
+    <!-- <strong>Test</strong>
+    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p> -->
   </div>
+ 
 </ion-content>
+
+
