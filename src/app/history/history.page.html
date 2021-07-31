@@ -13,13 +13,13 @@
    
         <ion-list-header lines="inset">
           <ion-grid>
-            <ion-row>
-              <ion-col *ngFor="let history of historyList" size="12">
+            <ion-row *ngFor="let history of historyList"size="12">
+              <ion-col *ngIf="history.totalPrice>0">
                 <ion-label color="danger">{{history.date}}</ion-label>
               </ion-col>
             </ion-row>
-            <ion-row>
-              <ion-col *ngFor="let history of historyList" size="12">
+            <ion-row *ngFor="let history of historyList"size="12">
+              <ion-col *ngIf="history.totalPrice>0">
                 <ion-label>${{history.totalPrice}}</ion-label>
               </ion-col>
             </ion-row>

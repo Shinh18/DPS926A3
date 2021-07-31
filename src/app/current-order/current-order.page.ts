@@ -35,7 +35,7 @@ export class CurrentOrderPage implements OnInit {
     this.activatedRoute.paramMap.subscribe(paramMap => {
   
       this.currOrder = this.orderService.getOrder();
-      this.currOrder.pizzaList.shift();
+     // this.currOrder.pizzaList.shift();
       console.log(this.currOrder);
       // console.log("this is currOrder " + this.currOrder.totalPrice + " " + this.currOrder.totalQuantity + " ");
       // for(let pz of this.currOrder.pizzaList) {

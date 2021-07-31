@@ -121,7 +121,8 @@ export class HomePage implements OnInit{
       // console.log(this.pizza.quantity);
 
       this.calPrice(this.pizza.topping, this.pizza.size);
-       this.orderService.addToOrder(this.pizza);
+      console.log("Pizza " + this.pizza.price + " " + this.pizza.quantity + " " + this.pizza.size + " " + this.pizza.topping);
+      this.orderService.addToOrder(Object.assign({}, this.pizza));
       this.order = this.orderService.getOrder();
     //  console.log(this.order.pizzaList)
     

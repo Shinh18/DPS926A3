@@ -18,7 +18,8 @@ export class HistoryPage implements OnInit {
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramMap => {
     this.historyList = this.historyService.getHistoryList();
-    this.historyList.shift();
+   // this.historyList.shift();
+    
   })
   }
 
