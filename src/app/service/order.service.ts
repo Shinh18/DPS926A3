@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Pizza, Order } from '../model';
 
@@ -41,8 +42,10 @@ export class OrderService {
     }
   }
 
-  removeFromOrder(pizza){
+  removeItem(pizza){
     for(let i = 0; i < this.order.pizzaList.length; i++) {
+      console.log("i is" + i);
+      console.log(pizza);
       if(this.order.pizzaList[i] == pizza){
         this.order.pizzaList.splice(i, 1);
       }

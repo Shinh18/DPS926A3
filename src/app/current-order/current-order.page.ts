@@ -31,19 +31,18 @@ export class CurrentOrderPage implements OnInit {
 
     this.activatedRoute.paramMap.subscribe(paramMap => { 
       this.currOrder = this.orderService.getOrder();
-      console.log(this.currOrder);
       this.history = this.historyService.getHistory();
     })
   }
 
-  async showAlert(){
+  async removeFromOrder(pz){
     const alert = await this.alertController.create({
       header: 'Delete order',
       message: 'Do you want to remove this item from your order?',
       buttons: [{
         text: 'Yes',
         handler: () => {
-          this.orderService.removeFromOrder(this.pizza);
+          this.orderService.removeItem(pz);
         }
       }, 'No']
     });
@@ -74,13 +73,5 @@ export class CurrentOrderPage implements OnInit {
       });
       await unsuccessAlert.present();
     }  
-  }
-
-  removeItem(pz){
-    for(let i = 0; i < this.currOrder.pizzaList.length; i++) {
-      if(this.currOrder.pizzaList[i] == pz){
-        this.currOrder.pizzaList.splice(i, 1);
-      }
-    }
   }
 }

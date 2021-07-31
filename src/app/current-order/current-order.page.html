@@ -22,7 +22,7 @@
     <ion-row class="ion-align-items-center">
       <ion-col>
         <ion-list>
-          <ion-item (click)="showAlert(pizza)"*ngFor="let pizza of currOrder.pizzaList" >
+          <ion-item (click)="removeFromOrder(pizza)"*ngFor="let pizza of currOrder.pizzaList" >
             <ion-row *ngIf="pizza.price>0">
               <ion-col>
                 <ion-label>
