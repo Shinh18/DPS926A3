@@ -43,11 +43,9 @@ export class OrderService {
 
   removeFromOrder(pizza){
     for(let i = 0; i < this.order.pizzaList.length; i++) {
-
       if(this.order.pizzaList[i] == pizza){
         this.order.pizzaList.splice(i, 1);
       }
-
     }
   }
 }
